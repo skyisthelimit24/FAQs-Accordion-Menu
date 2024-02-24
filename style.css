@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Outfit', 'sans-serif';
+    font-size: 15px;
+    background-color: #34495e;
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    background-color: rgb(202, 233, 252);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: justify;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .5);
+}
+
+.container h1 {
+    text-align: center;
+    font-weight: 900;
+    margin: 2rem 0;
+    background-color: lightblue;
+    color: #16304b;
+}
+
+.container .accordion_item {
+    color: #333;
+}
+
+.accordion_item_header {
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.accordion_item_header:hover {
+    color: #3a6da3;
+    transition: .1s ease-in-out;
+}
+
+.accordion_item_header::after {
+    content: '\002B';
+    font-size: 2rem;
+    position: absolute;
+    right: 1rem;
+}
+
+.accordion_item_header.active::after {
+    content: '\2212';
+}
+
+.accordion_item_body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.accordion_item_body_desc {
+    padding: .5rem;
+    line-height: 1.5rem;
+    border-top: 2px solid ;
+    border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+}
+.accordion_item_header.active + .accordion_item_body {
+    max-height: 200px;
+}
+
+.attribution {
+    background-color: lightblue;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+}
+.trinket {
+    margin-left: auto;
+}
+.trinket a {
+    text-decoration: none;
+    color: #34495e;;
+}
+.trinket a:hover {
+    font-weight: 900;
+}
+
+img {
+    max-width: 32px;
+    margin-left: auto;
+}
+
+.author {
+    text-align: center;
+    padding: .5rem;
+}
+.author a {
+    text-decoration: none;
+    color: #34495e;
+    font-weight: bold;
+}
+.author a:hover {
+    font-weight: 900;
+}
+
+
+@media(max-width:600px) {
+    html {
+        font-size: 13px;
+    }
+    .container {
+        padding: .4rem;
+    }
+    .accordion_item_header {
+        padding: 1rem 5rem 1rem 1rem;
+    }
+    .accordion_item_body,
+    .accordion_item_body_desc {
+        padding: 1rem 5rem 1rem 1rem;
+    }
+}
